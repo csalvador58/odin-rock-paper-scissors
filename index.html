@@ -7,7 +7,60 @@
     </head>
 
     <body>
-        
+        <script>
+            
+            function game() {
+                // Start Rock, Paper, Scissors game
+                let playerWin = 0;
+                let computerWin = 0;
+
+                for (let i = 0; i < 5; i++) {
+                // Play five rounds
+                    let playerSelection = prompt("Rock, Paper, or Scissors?");
+                    let computerSelection = computerPlay();
+
+                    playRound(playerSelection, computerSelection);
+                    
+                }
+                return;                
+            }
+
+
+            function computerPlay() {
+                // randomly selects rock, paper, or scissor. 
+            }
+
+            function playRound(player, computer) {
+                // Compare selections to determine winner
+                playerPick = player.toLowerCase();
+
+                if (playerPick === 'rock' && computer === 'scissors') {
+                    console.log(`Rock beats scissors, Player wins!`);
+                    playerWin++;
+                } else if (playerPick === 'rock' && computer === 'paper') {
+                    console.log(`Paper bests scissors, Computer wins!`);
+                    computerWin++;
+                } else if (playerPick === 'paper' && computer === 'rock') {
+                    console.log(`Paper beats rock, Player wins!`);
+                    playerWin++;
+                } else if (playerPick === 'paper' && computer === 'scissors') {
+                    console.log(`Scissors beats paper, Computer wins!`);
+                    computerWin++;
+                } else if (playerPick === 'scissors' && computer === 'rock') {
+                    console.log(`Rock beats scissors, Computer wins!`);
+                    computerWin++;
+                } else if (playerPick === 'scissors' && computer === 'paper') {
+                    playerWin++;
+                } else {
+                    console.log(`It\'s a tie! Both players selected ${playerPick}.`);
+                }
+                
+            }
+
+
+
+            game();
+        </script>
     </body>
 
 
