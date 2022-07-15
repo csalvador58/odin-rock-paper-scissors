@@ -4,7 +4,7 @@ let computerWin;
 game();
 
 function game() {
-    // Start Rock, Paper, Scissors game. Scores are reset.
+    // Start Rock, Paper, Scissors game. Scores are reset to zero.
     playerWin = 0;
     computerWin = 0;
 
@@ -24,6 +24,7 @@ function game() {
 
     }
     
+    // Display winner and current scores.
     if (playerWin > computerWin) {
         console.log(`You win the game! Overall score - You: ${playerWin}, Computer: ${computerWin}`);
     } else if (playerWin < computerWin) {
@@ -35,13 +36,13 @@ function game() {
 
 
 function computerPlay() {
-    // randomly selects rock, paper, or scissor. 
+    // Randomly selects rock, paper, or scissor. 
     let playOptions = ['rock', 'paper', 'scissors'];
     return playOptions[Math.floor(Math.random() * 3)];
 }
 
 function playRound(player, computer) {
-    // Compare selections to determine winner
+    // Compare selections to determine winner.
     
 
     if (playerPick === computer) {
