@@ -36,7 +36,8 @@ function game() {
 
 function computerPlay() {
     // randomly selects rock, paper, or scissor. 
-    return 'paper'; //default selection test only
+    let playOptions = ['rock', 'paper', 'scissors'];
+    return playOptions[Math.floor(Math.random() * 3)];
 }
 
 function playRound(player, computer) {
