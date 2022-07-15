@@ -3,78 +3,11 @@
     <head>
         <meta charset="UTC-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script> src="myscripts.js" </script>
+        
     </head>
 
     <body>
-        <script>
-            let playerWin;
-            let computerWin; 
-            function game() {
-                // Start Rock, Paper, Scissors game. Scores are reset.
-                playerWin = 0;
-                computerWin = 0;
-
-                for (let i = 0; i < 5; i++) {
-                // Play five rounds
-                    let playerSelection = prompt("Rock, Paper, or Scissors?");
-                    playerPick = playerSelection.toLowerCase();
-
-                    while ((playerPick != 'rock') || (playerPick != 'paper') || (playerPick != 'scissors')) {
-                        playerPick = prompt("Pleas enter a valid selection - Rock, Paper, or Scissors?") 
-                    }
-                    let computerSelection = computerPlay();
-
-                    playRound(playerSelection, computerSelection);
-
-                }
-                
-                if (playerWin > computerWin) {
-                    console.log(`You win the game! Overall score - You: ${playerWin}, Computer: ${computerWin}`);
-                } else if (playerWin < computerWin) {
-                    console.log(`You lost the game. Overall score - You ${playerWin}, Computer: ${computerWin}`);
-                } else {
-                    console.log(`Tie game!`);
-                }
-            }
-
-
-            function computerPlay() {
-                // randomly selects rock, paper, or scissor. 
-                return 'paper'; //default selection test only
-            }
-
-            function playRound(player, computer) {
-                // Compare selections to determine winner
-                
-
-                if (playerPick === computer) {
-                    console.log(`It\'s a tie! Both players selected ${playerPick}.`);
-                }
-                else if (playerPick === 'rock' && computer === 'scissors') {
-                    console.log(`Rock beats scissors, Player wins!`);
-                    playerWin++;
-                } else if (playerPick === 'rock' && computer === 'paper') {
-                    console.log(`Paper beats rock, Computer wins!`);
-                    computerWin++;
-                } else if (playerPick === 'paper' && computer === 'rock') {
-                    console.log(`Paper beats rock, Player wins!`);
-                    playerWin++;
-                } else if (playerPick === 'paper' && computer === 'scissors') {
-                    console.log(`Scissors beats paper, Computer wins!`);
-                    computerWin++;
-                } else if (playerPick === 'scissors' && computer === 'rock') {
-                    console.log(`Rock beats scissors, Computer wins!`);
-                    computerWin++;
-                } else if (playerPick === 'scissors' && computer === 'paper') {
-                    playerWin++;
-                } else {
-                    console.log(`${playerPick} is an invalid entry, try again!`);
-                }
-            }
-
-            game();
-        </script>
+        <script src="myscripts.js"></script>
     </body>
 
 
