@@ -1,14 +1,15 @@
-let playerWinCount;
-let computerWinCount;
+let playerWinCount = 0;
+let computerWinCount = 0;
 
 game();
 
 function game() {
     // Start Rock, Paper, Scissors game. Scores are reset to zero.
-    playerWinCount = 0;
-    computerWinCount = 0;
+    /* playerWinCount = 0;
+    computerWinCount = 0; */
 
-    for (let i = 0; i < 5; i++) {
+
+   /*  for (let i = 4; i < 5; i++) {
     // Play five rounds
         let playerAnswer = prompt(`Round ${i+1} - Rock, Paper, or Scissors?`);
         playerSelection = playerAnswer.toLowerCase();
@@ -22,16 +23,32 @@ function game() {
         computerSelection = randomSelect();
         playRound(playerSelection, computerSelection);
 
-    }
-    
-    // Display winner and current scores.
-    if (playerWinCount > computerWinCount) {
-        console.log(`You win the game! Overall score - You: ${playerWinCount}, Computer: ${computerWinCount}`);
-    } else if (playerWinCount < computerWinCount) {
-        console.log(`You lost the game. Overall score - You ${playerWinCount}, Computer: ${computerWinCount}`);
-    } else {
-        console.log(`Tie game! Overall score - You ${playerWinCount}, Computer: ${computerWinCount}`);
-    }
+    } */
+
+/*     const rock = document.querySelector('.rock');
+    const scissors = document.querySelector('.scissors');
+    const paper = document.querySelector('.paper'); */
+
+
+    rock.addEventListener('click', function(e) {
+        playerSelection = 'rock';
+        computerSelection = randomSelect();
+        playRound(playerSelection, computerSelection);
+    });
+
+    scissors.addEventListener('click', function(e) {
+        playerSelection = 'scissors';
+        computerSelection = randomSelect();
+        playRound(playerSelection, computerSelection);
+    });
+
+    paper.addEventListener('click', function(e) {
+        playerSelection = 'paper';
+        computerSelection = randomSelect();
+        playRound(playerSelection, computerSelection);
+    });
+
+
 }
 
 
@@ -67,5 +84,15 @@ function playRound(player, computer) {
     } else {
         console.log(`System error occurred, please try again!`);
     }
+
+    // Display winner and current scores.
+    if (playerWinCount > computerWinCount) {
+        console.log(`You win the game! Overall score - You: ${playerWinCount}, Computer: ${computerWinCount}`);
+    } else if (playerWinCount < computerWinCount) {
+        console.log(`You lost the game. Overall score - You ${playerWinCount}, Computer: ${computerWinCount}`);
+    } else {
+        console.log(`Tie game! Overall score - You ${playerWinCount}, Computer: ${computerWinCount}`);
+    }
+ 
 
 }
