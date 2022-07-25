@@ -1,10 +1,21 @@
 let playerWinCount = 0;
 let computerWinCount = 0;
 
-game();
-
 const displayScore = document.querySelector('#displayScore');
 const displayWinner = document.querySelector('#displayWinner');
+const main = document.getElementById('main');
+const bgImage = document.querySelector('.bgImage');
+const tempDisplay = document.querySelector(".tempDisplay")
+
+startGame.addEventListener('click', function() {
+    tempDisplay.style.display = "none";
+    bgImage.style.backgroundImage = "url(/pics/pexels-pixabay-220182-wallBackground.jpg)";
+    main.style.display = "block";
+    game();
+});
+
+
+
 
 function game() {
   
@@ -14,13 +25,13 @@ function game() {
         playRound(playerSelection, computerSelection);
     });
 
-    scissors.addEventListener('click', function(e) {
+    scissors.addEventListener('click', function() {
         playerSelection = 'scissors';
         computerSelection = randomSelect();
         playRound(playerSelection, computerSelection);
     });
 
-    paper.addEventListener('click', function(e) {
+    paper.addEventListener('click', function() {
         playerSelection = 'paper';
         computerSelection = randomSelect();
         playRound(playerSelection, computerSelection);
