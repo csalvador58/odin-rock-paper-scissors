@@ -9,15 +9,21 @@
     </head>
 
     <body class="bgImage">
-        <h1>Rock, Paper, Scissors</h1>
-        <p class="tempDisplay">Play if you dare... <button id="startGame">Start game</button></p>
-        
+        <div id="gameIntro">
+            <h1>Rock, Paper, Scissors</h1>
+            <p>Play if you dare... <button id="startGame">Start game</button></p>
+        </div>
+
         <div id="main">
-            <button id="rock" class="btn">Rock</button>
-            <button id="scissors" class="btn">Scissors</button>
-            <button id="paper" class="btn">Paper</button>
-            <div id="displayScore"></div>
-            <div id="displayWinner"></div>
+            <h1 id="mainTitle">Rock, Paper, Scissors</h1>
+            <div id="buttons">
+                <button id="rock" class="btn"><img src="/pics/pexels-klairi-8574682-rock.jpg" width=200"/></button>
+                <button id="scissors" class="btn"><img src="pics/pexels-nikolaos-dimou-1319460-scissors.jpg" width=400"/></button>
+                <button id="paper" class="btn"><img src="/pics/pexels-karolina-grabowska-4207707-paper.jpg" width="178"></button>
+            </div>
+            
+            <p id="displayScore" class="displayText"></p>
+            <p id="displayWinner" class="displayText"></p>
         </div>
     </body>
 
