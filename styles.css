@@ -8,7 +8,8 @@
 }
 
 .btn {
-	background: black;
+	background-color: black;
+    box-shadow: 0 0 10px 10px black;
 	border: none;
 	padding: 0;
 	cursor: pointer;
@@ -22,7 +23,7 @@ button:active {
 }
 
 .bgImage {
-    background-image: url(/pics/pexels-monstera-7794361-white.jpg);
+    background-image: url(./pics/pexels-monstera-7794361-white.jpg);
     width: 100%;
     height: 100%;
     background-repeat: no-repeat;
@@ -32,8 +33,8 @@ button:active {
 .displayText {
     text-align: center;
     font-size: 40px;
-    font-family:sans-serif;
+    font-family: sans-serif;
     color: rgb(12, 11, 11);
-    text-shadow: 1px 1px black;
+    text-shadow: 3px 1px black;
     
 }

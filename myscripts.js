@@ -15,7 +15,7 @@ const mainTitle = document.getElementById("mainTitle");
 
 startGame.addEventListener("click", function(e) {
     gameIntro.style.display = "none";
-    bgImage.style.backgroundImage = "url(/pics/pexels-pixabay-220182-wallBackground.jpg)";
+    bgImage.style.backgroundImage = "url(./pics/pexels-pixabay-220182-wallBackground.jpg)";
     main.style.display = "block";
 
     enableUI();
@@ -37,13 +37,14 @@ function game() {
         playerSelection = "scissors";
         computerSelection = randomSelect();
         playRound(playerSelection, computerSelection);
-    });
+        });
 
     paper.addEventListener("click", function() {
         playerSelection = "paper";
         computerSelection = randomSelect();
         playRound(playerSelection, computerSelection);
     });
+
 }
 
 
@@ -54,7 +55,7 @@ function randomSelect() {
 }
 
 function playRound(player, computer) {
-    // Compare selections to determine winner.
+    // Compare selections
     if (player === computer) {
         displayWinner.textContent = `It\'s a tie! Both players selected ${player}.`;
     }
@@ -80,7 +81,17 @@ function playRound(player, computer) {
         displayWinner.textContent = `System error occurred, please try again!`;
     }
 
-    // Display current scores.
+    // Change display color
+    if (playerWinCount > computerWinCount) {
+        displayScore.style.color = "rgb(74, 225, 74)";
+    } else if (playerWinCount < computerWinCount) {
+        displayScore.style.color = "rgb(229, 39, 39)";
+    } else {
+        displayScore.style.color = "black";
+    }
+
+    
+    // Display current scores
     displayScore.textContent = `Overall score - You: ${playerWinCount}, Computer: ${computerWinCount}`;
 
     // Display game winner
@@ -97,10 +108,13 @@ function playRound(player, computer) {
             displayScore.textContent = `Tie game! Overall score - You: 
                 ${playerWinCount}, Computer: ${computerWinCount}`;
             displayWinner.textContent = "";
-        }
-        playerWinCount = 0;
-        computerWinCount = 0;
+        }  
+
+    // Reset score
+    playerWinCount = 0;
+    computerWinCount = 0;  
     }
+    
 }
 
 function enableUI() {
@@ -111,5 +125,3 @@ function enableUI() {
     mainTitle.style.textShadow = "5px 5px white";
 
 }
-
-
